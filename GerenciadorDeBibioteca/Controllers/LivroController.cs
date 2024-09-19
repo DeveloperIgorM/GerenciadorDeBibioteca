@@ -9,14 +9,9 @@ using GerenciadorDeBibioteca.Models;
 
 namespace GerenciadorDeBibioteca.Controllers
 {
-    public class LivroController : Controller
+    public class LivroController(BancoDeDados context) : Controller
     {
-        private readonly BancoDeDados _context;
-
-        public LivroController(BancoDeDados context)
-        {
-            _context = context;
-        }
+        private readonly BancoDeDados _context = context;
 
         // GET: Livro
         public async Task<IActionResult> Index()
